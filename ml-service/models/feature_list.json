@@ -1,0 +1,15 @@
+{
+  "features": [
+    "rainfall_1h",
+    "rainfall_3h",
+    "rainfall_6h",
+    "rainfall_24h",
+    "soil_moisture",
+    "river_level",
+    "humidity",
+    "temperature",
+    "slope",
+    "elevation",
+    "historical_risk"
+  ]
+}

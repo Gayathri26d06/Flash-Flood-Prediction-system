@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-void text-ink font-display antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(45, 212, 232, 0.05), transparent 40%),
+      radial-gradient(circle at 88% 92%, rgba(240, 71, 63, 0.04), transparent 45%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(45, 212, 232, 0.25);
+  }
+
+  /* thin control-room scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #232a35;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2f3846;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2dd4e8;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .data-num {
+    @apply font-mono tabular-nums;
+  }
+
+  .panel {
+    @apply bg-panel border border-panel-border rounded-lg shadow-panel;
+  }
+
+  .panel-raised {
+    @apply bg-panel-raised border border-panel-border rounded-lg shadow-panel;
+  }
+
+  .scan-hairline {
+    background: linear-gradient(90deg, transparent, rgba(45, 212, 232, 0.5), transparent);
+  }
+}
+
+/* ---- Leaflet control-room theming ---- */
+.leaflet-container {
+  background: #0a0d12;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.leaflet-tile {
+  filter: grayscale(0.35) brightness(0.55) contrast(1.15) saturate(0.8);
+}
+
+.leaflet-popup-content-wrapper {
+  background: #12161d;
+  color: #e6eaf0;
+  border: 1px solid #232a35;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.7);
+}
+
+.leaflet-popup-tip {
+  background: #12161d;
+  border: 1px solid #232a35;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  min-width: 220px;
+}
+
+.leaflet-control-zoom a {
+  background: #12161d !important;
+  color: #e6eaf0 !important;
+  border: 1px solid #232a35 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #1a1f28 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(10, 13, 18, 0.7) !important;
+  color: #525a6b !important;
+}
+.leaflet-control-attribution a {
+  color: #8189a0 !important;
+}
+
+.risk-marker {
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
